@@ -1,21 +1,22 @@
 public Boolean isPassed(Boolean passedExam, Boolean passedAssignments, Boolean passedProject) {
     //code here
-    if(passedExam = true || passedAssignments = true || passedProject = true){
+    Integer count = 0;
+    List<Boolean> passList = new List<Boolean>();
+    passList.add(passedExam);
+    passList.add(passedAssignments);
+    passList.add(passedProject);
+
+    for(Boolean b : passList){
+        if(b){
+            count += 1;
+        }
+    }
+
+    if(count >= 2){
         return true;
-    }else if(passedExam = true || passedAssignments = true || passedProject = false){
-        return true
-    }else if(passedExam = true || passedAssignments = false || passedProject = true){
-        return true;
-    }else if(passedExam = false || passedAssignments = true || passedProject = true){
-        return true
-    }else if(passedExam = false || passedAssignments = false || passedProject = true){
-        return false;
-    }else if(passedExam = false || passedAssignments = true || passedProject = false){
-        return false;
-    }else if(passedExam = true || passedAssignments = false || passedProject = false){
-        return false;
-    }else if(passedExam = false || passedAssignments = false || passedProject = false){
+    }else{
         return false;
     }
+
     
 }
